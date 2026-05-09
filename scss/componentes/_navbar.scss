@@ -1,23 +1,35 @@
 .navbar {
     background-color: $color-gris-oscuro;
-    padding: 1rem 2rem;
-    @include flex-centro(row, space-between, center); // Usamos el mixin!
+    padding: 1rem 5%;
+    @include flex-centro(row, space-between, center);
+    border-bottom: 2px solid $color-rojo; // El detalle estético tech
 
-    &__logo {
-        color: $color-rojo;
+    .logo {
+        font-family: $fuente-titulos;
+        font-size: 1.8rem;
         font-weight: bold;
-        font-size: 1.5rem;
+        
+        a {
+            color: $color-blanco;
+            span {
+                color: $color-rojo; // El "Hub" en rojo
+            }
+        }
     }
 
-    &__links {
+    .nav-links {
         display: flex;
-        gap: 20px;
+        gap: 25px;
 
         li {
             a {
-                transition: color 0.3s ease;
+                color: $color-gris-claro;
+                font-weight: 500;
+                transition: 0.3s;
+
                 &:hover {
-                    color: $color-rojo; // El link cambia a rojo al pasar el mouse
+                    color: $color-rojo;
+                    text-shadow: 0 0 10px rgba(230, 0, 0, 0.5);
                 }
             }
         }

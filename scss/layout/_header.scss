@@ -1,0 +1,43 @@
+.hero {
+    height: 70vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../assets/img/hero-bg.jpg'); // Asegurate de tener una foto de hardware de fondo
+    background-size: cover;
+    background-position: center;
+    @include flex-centro(column, center, center);
+    text-align: center;
+    padding: 0 20px;
+
+    &-content {
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            span {
+                color: $color-rojo;
+            }
+        }
+
+        p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            color: $color-gris-claro;
+        }
+    }
+}
+
+// El botón que te piden como componente
+.btn-primary {
+    background-color: $color-rojo;
+    color: $color-blanco;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s, background-color 0.3s;
+    display: inline-block;
+
+    &:hover {
+        background-color: darken($color-rojo, 10%);
+        transform: translateY(-3px);
+        box-shadow: $sombra-suave;
+    }
+}
