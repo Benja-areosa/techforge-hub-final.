@@ -1,0 +1,25 @@
+.navbar {
+    background-color: $color-gris-oscuro;
+    padding: 1rem 2rem;
+    @include flex-centro(row, space-between, center); // Usamos el mixin!
+
+    &__logo {
+        color: $color-rojo;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    &__links {
+        display: flex;
+        gap: 20px;
+
+        li {
+            a {
+                transition: color 0.3s ease;
+                &:hover {
+                    color: $color-rojo; // El link cambia a rojo al pasar el mouse
+                }
+            }
+        }
+    }
+}
