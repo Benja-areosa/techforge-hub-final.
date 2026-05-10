@@ -1,6 +1,7 @@
 .hero {
     height: 70vh;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../assets/img/hero-bg.jpg'); // Asegurate de tener una foto de hardware de fondo
+    width: 100%; // Aseguramos que la sección ocupe todo el ancho
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../assets/img/hero-bg.jpg'); 
     background-size: cover;
     background-position: center;
     @include flex-centro(column, center, center);
@@ -11,6 +12,8 @@
         h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9); // Sombra para destacar sobre el fondo
+            
             span {
                 color: $color-rojo;
             }
@@ -19,25 +22,44 @@
         p {
             font-size: 1.2rem;
             max-width: 600px;
-            margin-bottom: 2rem;
+            text-align: center;
+            margin: 0 auto 2rem auto; 
             color: $color-gris-claro;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
         }
     }
 }
 
-// El botón que te piden como componente
 .btn-primary {
     background-color: $color-rojo;
     color: $color-blanco;
     padding: 12px 30px;
     border-radius: 5px;
     font-weight: bold;
-    transition: transform 0.3s, background-color 0.3s;
+    text-transform: uppercase; // Todo en mayúsculas da aspecto más pro
+    letter-spacing: 1px; // Separa un poquito las letras
+    transition: all 0.3s ease; // "all" ataja cambios de color, posición y sombra
     display: inline-block;
 
     &:hover {
         background-color: darken($color-rojo, 10%);
-        transform: translateY(-3px);
-        box-shadow: $sombra-suave;
+        transform: translateY(-3px) scale(1.05); // Sube y se agranda un poquito
+        box-shadow: 0 10px 20px rgba(230, 0, 0, 0.5); // Efecto resplandor rojo
+    }
+}
+
+// --- ADAPTACIÓN PARA CELULARES ---
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh; // Un poco más bajo en celu
+        
+        &-content {
+            h1 {
+                font-size: 2.2rem; // Achicamos el título para que entre bien
+            }
+            p {
+                font-size: 1rem; // Achicamos el texto
+            }
+        }
     }
 }
