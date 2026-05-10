@@ -1,0 +1,17 @@
+// 1. Utilidades (Variables y Mixins primero)
+@import "utils/variables";
+@import "utils/mixins";
+
+// 2. Base (Reset y estilos globales)
+@import "base/reset";
+@import "base/tipografia";
+
+// 3. Layout (Estructura)
+@import "layout/header";
+@import "layout/footer";
+@import "layout/grid";
+
+// 4. Componentes (Cosas que se repiten)
+@import "componentes/navbar";
+@import "componentes/buttons";
+@import "componentes/cards";
