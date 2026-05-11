@@ -1,64 +1,86 @@
 .hero {
-    height: 70vh;
-    width: 100%; // Aseguramos que la sección ocupe todo el ancho
+    height: 80vh; // Un poco más de altura para que luzca
+    width: 100%;
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../assets/img/hero-bg.jpg'); 
     background-size: cover;
     background-position: center;
-    @include flex-centro(column, center, center);
+    @include flex-centro(); // Centrado total
     text-align: center;
     padding: 0 20px;
 
     &-content {
+        max-width: 800px; // Evita que el texto se estire demasiado
+        
         h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9); // Sombra para destacar sobre el fondo
-            
+            font-size: 4rem; // Un poco más grande
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); 
+            line-height: 1.1;
+
             span {
                 color: $color-rojo;
+                display: block; // Hace que "Estación de Batalla" destaque abajo
             }
         }
 
         p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            text-align: center;
-            margin: 0 auto 2rem auto; 
+            font-size: 1.4rem;
+            max-width: 650px;
+            margin: 0 auto 2.5rem auto; 
             color: $color-gris-claro;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+            line-height: 1.6;
         }
     }
 }
 
-.btn-primary {
-    background-color: $color-rojo;
-    color: $color-blanco;
-    padding: 12px 30px;
-    border-radius: 5px;
-    font-weight: bold;
-    text-transform: uppercase; // Todo en mayúsculas da aspecto más pro
-    letter-spacing: 1px; // Separa un poquito las letras
-    transition: all 0.3s ease; // "all" ataja cambios de color, posición y sombra
-    display: inline-block;
+// Estilos para mejorar la sección "Sobre TechForge Hub"
+.intro {
+    padding: 80px 20px;
+    background-color: #1a1a1a; // Un gris casi negro para separar del fondo
 
-    &:hover {
-        background-color: darken($color-rojo, 10%);
-        transform: translateY(-3px) scale(1.05); // Sube y se agranda un poquito
-        box-shadow: 0 10px 20px rgba(230, 0, 0, 0.5); // Efecto resplandor rojo
+    h2 {
+        font-size: 2.5rem;
+        color: $color-blanco;
+        margin-bottom: 20px;
+        
+        &::after { // Una línea roja decorativa abajo del título
+            content: '';
+            width: 60px;
+            height: 3px;
+            background-color: $color-rojo;
+            display: block;
+            margin: 15px auto 0;
+        }
+    }
+
+    p {
+        font-size: 1.2rem;
+        color: $color-gris-claro;
+        max-width: 750px;
+        margin: 0 auto;
+        line-height: 1.8;
+        text-align: center;
     }
 }
 
-// --- ADAPTACIÓN PARA CELULARES ---
+// Contenedor global para márgenes laterales
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
 @media (max-width: 768px) {
     .hero {
-        height: 60vh; // Un poco más bajo en celu
+        height: 60vh;
         
         &-content {
             h1 {
-                font-size: 2.2rem; // Achicamos el título para que entre bien
+                font-size: 2.2rem;
             }
             p {
-                font-size: 1rem; // Achicamos el texto
+                font-size: 1rem; 
             }
         }
     }
